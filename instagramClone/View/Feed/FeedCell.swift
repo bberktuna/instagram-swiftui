@@ -66,7 +66,7 @@ struct FeedCell: View {
                 .padding(.leading, 6 )
                 .padding(.bottom, 0.5)
 
-                            HStack {
+            HStack {
                 Text("berktuna")
                     .font(.system(size: 14, weight: .semibold)) +
                 Text(" yavruuummmm")
