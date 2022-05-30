@@ -17,26 +17,55 @@ class AuthViewModel: ObservableObject {
     }
     
     // AUTHENTICATION FUNCTIONS
-    func login (){
-        print("login")
-
+    func login (withEmail email: String, password: String ){
+        Auth.auth().signIn(withEmail: email, password: password ) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to login \(error.localizedDescription)")
+                return
+            }
+            guard let user = result?.user else { return }
+            self.userSession = user
+            print("Successfully logged in...")
+            
+        }
+        
     }
     
-    func register (withEmail email: String, password: String){
-        
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            } else {
-                guard let user = result?.user else { return }
-                self.userSession = user
-                print("User registered successfully")
+    func register (
+        withEmail email: String,
+        password: String,
+        image: UIImage?,
+        fullName: String,
+        username: String
+    ){
+        guard let image = image else { return }
+        ImageUploader.UploadImage(image: image) { imageUrl in
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                } else {
+                    guard let user = result?.user else { return }
+                    print("User registered successfully")
+
+                    let data = [
+                        "email": email,
+                        "username": username,
+                        "password": password,
+                        "fullName": fullName,
+                        "profileImageUrl": imageUrl,
+                        "uid": user.uid
+                    ]
+                    Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                        print("Successfully uploaded user data...")
+                        self.userSession = user
+                    }
+                }
             }
             
         }
-            print(email)
-            print(password)
+        print(email)
+        print(password)
     }
     
     func signout (){
