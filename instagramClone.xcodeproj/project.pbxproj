@@ -12,6 +12,7 @@
 		C06D88B02834429000D6FCE6 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D88AF2834429000D6FCE6 /* FeedView.swift */; };
 		C06D88B2283442C500D6FCE6 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D88B1283442C500D6FCE6 /* FeedCell.swift */; };
 		C07230B22844AB3000474161 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C07230B12844AB3000474161 /* GoogleService-Info.plist */; };
+		C07230B42844ACCB00474161 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07230B32844ACCB00474161 /* AuthViewModel.swift */; };
 		C09477D42843EA8100A0854D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C09477D32843EA8100A0854D /* FirebaseAuth */; };
 		C09477D62843EA8100A0854D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C09477D52843EA8100A0854D /* FirebaseFirestore */; };
 		C09477D82843EA8100A0854D /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = C09477D72843EA8100A0854D /* FirebaseFunctions */; };
@@ -52,6 +53,7 @@
 		C06D88AF2834429000D6FCE6 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		C06D88B1283442C500D6FCE6 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		C07230B12844AB3000474161 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C07230B32844ACCB00474161 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C0CC63A02832D1980082CF47 /* instagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CC63A32832D1980082CF47 /* instagramCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramCloneApp.swift; sourceTree = "<group>"; };
 		C0CC63A52832D1980082CF47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,7 +184,7 @@
 		C0CC63B62832D4E20082CF47 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C0CC63C32832D6620082CF47 /* Authentication */,
+				C0CC63C32832D6620082CF47 /* Authtentication */,
 				C0CC63C22832D65F0082CF47 /* Profile */,
 				C0CC63C12832D6510082CF47 /* Notifications */,
 				C0CC63C02832D64F0082CF47 /* Feed */,
@@ -293,11 +295,12 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		C0CC63C32832D6620082CF47 /* Authentication */ = {
+		C0CC63C32832D6620082CF47 /* Authtentication */ = {
 			isa = PBXGroup;
 			children = (
+				C07230B32844ACCB00474161 /* AuthViewModel.swift */,
 			);
-			path = Authentication;
+			path = Authtentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +410,7 @@
 				C0CC63CB2832E7130082CF47 /* NotificationsView.swift in Sources */,
 				C0D42403283AEE2100CF1B79 /* ProfileActionButtonView.swift in Sources */,
 				C06D88B2283442C500D6FCE6 /* FeedCell.swift in Sources */,
+				C07230B42844ACCB00474161 /* AuthViewModel.swift in Sources */,
 				C066CF562840B70E0057C0CB /* CustomTextField.swift in Sources */,
 				C0D423FD283AE25900CF1B79 /* NotificationCell.swift in Sources */,
 				C0D42407283FD13600CF1B79 /* LoginView.swift in Sources */,

@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        MainTabView()
-            
+
+        Group {
+            // if not logged in show log in
+            if viewModel.userSession == nil {
+                LoginView()
+            } else {
+                MainTabView()
+            }
+            // else show feed view
+        }
     }
 }
 
