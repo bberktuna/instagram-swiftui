@@ -9,12 +9,14 @@ import SwiftUI
 import Firebase
 
 class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User? // keep track of user 
+    @Published var userSession: FirebaseAuth.User? // keep track of user
+    static let shared = AuthViewModel()
     
     init() {
-        // check if user exists
-        userSession = Auth.auth().currentUser
+        userSession = Auth.auth().currentUser // check if user exists
     }
+    
+    // AUTHENTICATION FUNCTIONS
     func login (){
         print("login")
 
@@ -33,14 +35,13 @@ class AuthViewModel: ObservableObject {
             }
             
         }
-        
             print(email)
             print(password)
     }
     
     func signout (){
-        print("signout")
-
+        self.userSession = nil
+        try? Auth.auth().signOut()
     }
     
     func resetpassword (){
