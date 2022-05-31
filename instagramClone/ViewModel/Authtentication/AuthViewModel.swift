@@ -14,6 +14,7 @@ class AuthViewModel: ObservableObject {
     
     init() {
         userSession = Auth.auth().currentUser // check if user exists
+        fetchUser()
     }
     
     // AUTHENTICATION FUNCTIONS
@@ -56,7 +57,7 @@ class AuthViewModel: ObservableObject {
                         "profileImageUrl": imageUrl,
                         "uid": user.uid
                     ]
-                    Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                    COLLECTION_USERS.document(user.uid).setData(data) { _ in
                         print("Successfully uploaded user data...")
                         self.userSession = user
                     }
@@ -78,6 +79,9 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser (){
-        print("fetchuser")
+        guard let uid = userSession?.uid else { return }
+        COLLECTION_USERS.document(uid).getDocument{snapshot, _ in
+            print(snapshot?.data())
+        }
     }
 }

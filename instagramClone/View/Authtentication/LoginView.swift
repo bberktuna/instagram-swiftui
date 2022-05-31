@@ -31,6 +31,9 @@ struct LoginView: View {
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 32)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+
                             
                             //password field
                             
@@ -40,6 +43,10 @@ struct LoginView: View {
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 32)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+
+
                         }
                         //forgot password
                         HStack {

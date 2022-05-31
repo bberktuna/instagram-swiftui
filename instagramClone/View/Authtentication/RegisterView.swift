@@ -65,6 +65,8 @@ struct RegisterView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocapitalization(.none)
+
                     
                     //username field
                     CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person")
@@ -73,6 +75,10 @@ struct RegisterView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+
+
                     
                     //fullname field
                     CustomTextField(text: $fullName, placeholder: Text("Full Name"), imageName: "person")
@@ -81,6 +87,10 @@ struct RegisterView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+
+
                     
                     //password field
                     
@@ -90,6 +100,10 @@ struct RegisterView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+
+
                 }
 
                 //sign in
