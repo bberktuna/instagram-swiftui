@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    var user: User
     var body: some View {
         NavigationView {
             TabView   {
@@ -29,7 +30,7 @@ struct MainTabView: View {
                 .tabItem {
                     Image(systemName: "heart")
                 }
-            ProfileView()
+            ProfileView(user: user)
                 .tabItem {
                     Image(systemName: "person")
                 }
