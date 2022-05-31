@@ -80,8 +80,9 @@ class AuthViewModel: ObservableObject {
     
     func fetchUser (){
         guard let uid = userSession?.uid else { return }
-        COLLECTION_USERS.document(uid).getDocument{snapshot, _ in
-            print(snapshot?.data())
+        COLLECTION_USERS.document(uid).getDocument{snapshot, _ in // COMPLETION HANDLER SO WE GET ACCES TO SNAPSHOT
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            print("DEBUG: User is \(user)")
         }
     }
 }

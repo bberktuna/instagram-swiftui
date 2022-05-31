@@ -8,26 +8,23 @@
 import SwiftUI
 
 struct UserListView: View {
+    @ObservedObject var viewModel: SearchViewModel
+    // SEARCH VIEW IS NOT AN INITIALIZER ITS A INSTANCE BECAUSE IF WE INITIALIZE IT TWICE IT WILL
+    // READ THE DATABASE TWICE
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0..<10){ _ in
+                ForEach(viewModel.users){ user in
                     NavigationLink(
-                        destination: ProfileView() ,
+                        destination: ProfileView()   ,
                         label: {
-                            UserCell()
+                            UserCell(user: user)
                             .padding(.leading)
                             
                         })
                 }
             }
         }
-    }
-}
-
-struct UserListView_Previews: PreviewProvider {
-        static var previews: some View {
-            UserListView()
     }
 }
 
