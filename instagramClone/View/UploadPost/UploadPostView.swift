@@ -42,8 +42,10 @@ struct UploadPostView: View {
                         .frame(width: 96, height: 96)
                         .clipped()
                     
-                    TextField("Enter your caption...", text: $captionText)
-                }.padding()
+                    TextArea(text: $captionText, placeholder: "Enter your caption...")
+                        .frame(height: 200)
+                             
+                    }.padding()
                 
                 
                 Button(
@@ -65,6 +67,21 @@ struct UploadPostView: View {
                         .cornerRadius(5)
                         .foregroundColor(.white)
                 }).padding()
+                
+                Button(
+                    action: {
+                        captionText = ""
+                        postImage = nil
+                    },
+                    label: {
+                    Text("Cancel")
+                        .font(.system(size: 16, weight: .semibold ))
+                        .frame(width: 360, height: 50)
+                        .background(Color.red)
+                        .cornerRadius(5)
+                        .foregroundColor(.white)
+                    }).padding(.top, -12)
+                
             }
             Spacer()
         }
