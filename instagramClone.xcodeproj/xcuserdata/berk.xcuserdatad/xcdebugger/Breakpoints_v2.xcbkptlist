@@ -14,8 +14,8 @@
             filePath = "instagramClone/View/Main/MainTabView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "logoutButton"
             landmarkType = "24">
          </BreakpointContent>

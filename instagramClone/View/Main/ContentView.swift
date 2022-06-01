@@ -1,26 +1,25 @@
 //
 //  ContentView.swift
-//  instagramClone
+//  InstagramSwiftUITutorial
 //
-//  Created by berk tuna on 16/05/2022.
+//  Created by Stephen Dowless on 12/26/20.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State var selectedIndex = 0
+    
     var body: some View {
-
         Group {
-            // if not logged in show log in
             if viewModel.userSession == nil {
                 LoginView()
             } else {
                 if let user = viewModel.currentUser {
-                    MainTabView(user: user)
+                        MainTabView(selectedIndex: $selectedIndex, user: user)
                 }
             }
-            // else show feed view
         }
     }
 }

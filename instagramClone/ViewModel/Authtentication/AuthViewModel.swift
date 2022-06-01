@@ -41,7 +41,7 @@ class AuthViewModel: ObservableObject {
         username: String
     ){
         guard let image = image else { return }
-        ImageUploader.UploadImage(image: image) { imageUrl in
+        ImageUploader.UploadImage(image: image, type: .profile) { imageUrl in
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let error = error {
                     print(error.localizedDescription)
