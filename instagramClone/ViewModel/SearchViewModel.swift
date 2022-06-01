@@ -13,7 +13,7 @@ class SearchViewModel: ObservableObject {
     init(){
         fetchUsers()
     }
-    
+        
     func fetchUsers(){
         COLLECTION_USERS.getDocuments{snapshot, _ in // REACH OUT THE USERS DOCUMENTS AND COLLECT ALL OF THEM
             guard let documents = snapshot?.documents else { return } // SAFELY UNWRAP THE DOCUMENTS, SEE IF THEY EXISTS
@@ -38,5 +38,4 @@ class SearchViewModel: ObservableObject {
             $0.username.lowercased().contains(lowercasedQuery) })
         // $0 REPRESENTS THE USER OF USERS ARRAY
     }
-    
 }

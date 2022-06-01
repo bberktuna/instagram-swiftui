@@ -44,6 +44,8 @@ struct UploadPostView: View {
                     
                     TextArea(text: $captionText, placeholder: "Enter your caption...")
                         .frame(height: 200)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                              
                     }.padding()
                 

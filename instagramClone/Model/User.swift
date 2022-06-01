@@ -15,4 +15,6 @@ struct User: Identifiable, Decodable {
     var isFollowed: Bool? = false
     
     var isCurrentUser: Bool { return AuthViewModel.shared.userSession?.uid == id}
+    
+    var didLike: Bool? = false
 }
