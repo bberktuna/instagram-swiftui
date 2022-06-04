@@ -40,30 +40,27 @@ struct FeedCell: View {
                 .clipped()
             
             // action buttons
-            HStack(spacing: 12) {
-                Button(
-                    action: {
-                        didLike ? viewModel.unlike() : viewModel.like()
-
-                    },
-                    label: {
-                        Image(systemName: didLike ? "heart.fill" : "heart")
+            HStack(spacing: 16) {
+                Button(action: {
+                    didLike ? viewModel.unlike() : viewModel.like()
+                }, label: {
+                    Image(systemName: didLike ? "heart.fill" : "heart")
                         .resizable()
                         .scaledToFill()
+                        .foregroundColor(didLike ? .red : .black)
                         .frame(width: 20, height: 20)
                         .font(.system(size: 20))
                         .padding(4)
-                        .foregroundColor(didLike ? .red : .black)
                 })
                 
-                Button(action: {}, label: {
+                NavigationLink(destination: CommentsView()) {
                     Image(systemName: "bubble.right")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 20, height: 20)
                         .font(.system(size: 20))
                         .padding(4)
-                })
+                }
                 
                 Button(action: {}, label: {
                     Image(systemName: "paperplane")
