@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C059DB45284CE0DD00DF3E0F /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C059DB44284CE0DD00DF3E0F /* NotificationsViewModel.swift */; };
 		C066CF54283FEBCA0057C0CB /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C066CF53283FEBCA0057C0CB /* CustomSecureField.swift */; };
 		C066CF562840B70E0057C0CB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C066CF552840B70E0057C0CB /* CustomTextField.swift */; };
 		C06D88B02834429000D6FCE6 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D88AF2834429000D6FCE6 /* FeedView.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C059DB44284CE0DD00DF3E0F /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		C066CF53283FEBCA0057C0CB /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		C066CF552840B70E0057C0CB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C06D88AF2834429000D6FCE6 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		C0CC63C12832D6510082CF47 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				C059DB44284CE0DD00DF3E0F /* NotificationsViewModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				C0D423FD283AE25900CF1B79 /* NotificationCell.swift in Sources */,
 				C0D42407283FD13600CF1B79 /* LoginView.swift in Sources */,
 				C07230E7284CCB1400474161 /* Notification.swift in Sources */,
+				C059DB45284CE0DD00DF3E0F /* NotificationsViewModel.swift in Sources */,
 				C07230DD2848073600474161 /* Comment.swift in Sources */,
 				C0D423FB283ACF3900CF1B79 /* Extensions.swift in Sources */,
 				C07230B828463AB200474161 /* SwiftConstants.swift in Sources */,
