@@ -22,6 +22,8 @@ struct CustomInputView: View {
                 TextField("Comment...", text: $inputText)
                     .textFieldStyle(PlainTextFieldStyle())
                     .frame(minHeight: 30)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
                 
                 Button(action: action) {
                     Text("Send")
@@ -29,8 +31,9 @@ struct CustomInputView: View {
                         .foregroundColor(.black)
                 }
             }
+            .padding(.bottom, 8)
+            .padding(.horizontal)
         }
-        .padding(.bottom, 8)
-        .padding(.horizontal)
+
     }
 }

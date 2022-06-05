@@ -1,21 +1,26 @@
 //
 //  CommentsView.swift
-//  instagramClone
+//  InstagramSwiftUITutorial
 //
-//  Created by berk tuna on 01/06/2022.
+//  Created by Stephen Dowless on 1/1/21.
 //
 
 import SwiftUI
 
 struct CommentsView: View {
     @State var commentText = ""
+    @ObservedObject var viewModel: CommentViewModel
+    
+    init(post: Post) {
+        self.viewModel = CommentViewModel(post: post)
+    }
+    
     var body: some View {
         VStack {
-            // comment cells
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 24) {
-                    ForEach(0..<10) { _ in
-                        CommentCell()
+                    ForEach(viewModel.comments) { comment in
+                        CommentCell(comment: comment)
                     }
                 }
             }.padding(.top)
@@ -24,7 +29,8 @@ struct CommentsView: View {
         }
     }
     
-    func uploadComment(){
-        
+    func uploadComment() {
+        viewModel.uploadComment(commentText: commentText)
+        commentText = ""
     }
 }

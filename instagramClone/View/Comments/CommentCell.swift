@@ -1,34 +1,33 @@
 //
-//  CommentsCell.swift
-//  instagramClone
+//  CommentCell.swift
+//  InstagramSwiftUITutorial
 //
-//  Created by berk tuna on 01/06/2022.
+//  Created by Stephen Dowless on 1/1/21.
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CommentCell: View {
+    let comment: Comment
+    
     var body: some View {
         HStack {
-            Image("cat3")
+            KFImage(URL(string: comment.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 36, height: 36)
                 .clipShape(Circle())
             
-            Text("username")
-                .font(.system(size: 14, weight: .semibold)) +
-            Text(" comment text").font(.system(size: 14))
+            Text(comment.username).font(.system(size: 14, weight: .semibold)) +
+                Text(" \(comment.commentText)").font(.system(size: 14))
             
+            Spacer()
+            
+//            Text(" \(comment.timestampString ?? "")")
             Text("2m")
-                .font(.system(size: 12))
                 .foregroundColor(.gray)
+                .font(.system(size: 12))
         }.padding(.horizontal)
-    }
-}
-
-struct CommentCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentCell()
     }
 }
